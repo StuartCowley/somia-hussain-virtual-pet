@@ -1,3 +1,4 @@
+
 function Pet(name) {
   this.name = name;
   this.age = 0;
@@ -8,8 +9,22 @@ function Pet(name) {
   };
   this.hunger = 0;
   this.fitness = 10;
+  Pet.prototype.walk = function() {
+    if ((this.fitness + 4) <= 10 ) {
+      this.fitness += 4;
+    } else {
+      this.fitness = 10;
+    }
+  }
+  const MAXIMUM_FITNESS = 10;
+  const INCREASE_FITNESS = 4;
+    if ((this.fitness + INCREASE_FITNESS) <= MAXIMUM_FITNESS ) {
+      this.fitness += INCREASE_FITNESS;
+    } else {
+      this.fitness = MAXIMUM_FITNESS;
+    }
+
 }
 
-// The Pet should have an initial fitness of 10
 
 module.exports = Pet;
