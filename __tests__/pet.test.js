@@ -112,6 +112,26 @@ describe("growUp", () => {
               expect(pet.hunger).toEqual("I feel great!");
               expect(pet.fitness).toEqual("I feel great!");
             });
+            describe("get isAlive", () => {
+              it("pets hunger, fitness and age returning true or false", () => {
+                const pet = new Pet("fido");
+
+                pet.hunger = 11;
+                pet.fitness = 0;
+                pet.age = 31;
+
+                expect(pet.isAlive).toEqual(false);
+              });
+              it("pets hunger, fitness and age returning true or false", () => {
+                const pet = new Pet("fido");
+
+                pet.hunger = 9;
+                pet.fitness = 2;
+                pet.age = 29;
+
+                expect(pet.isAlive).toEqual(true);
+              });
+            });
           });
         });
       });
