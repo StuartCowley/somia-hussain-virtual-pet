@@ -131,6 +131,19 @@ describe("growUp", () => {
 
                 expect(pet.isAlive).toEqual(true);
               });
+              describe(" walk, feed, checkup", () => {
+                it("throws an error if the pet is not alive", () => {
+                  const pet = new Pet("Fido");
+
+                  pet.age = 30;
+                  pet.hunger = 11;
+                  pet.fitness = 0;
+                  
+                  expect(() => pet.walk()).toThrow("Your pet is no longer alive :(");
+                  expect(() => pet.feed()).toThrow("Your pet is no longer alive :(");
+                  expect(() => pet.checkup()).toThrow("Your pet is no longer alive :(");
+                });
+              });
             });
           });
         });
